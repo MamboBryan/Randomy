@@ -3,6 +3,10 @@
 
 This is a simple random number generator app that lets the user set the range in which the numbers will start and end from
 Enjoy the app
+
+##### App prototype [click here](https://projects.invisionapp.com/prototype/Randomy-cjvwi0tbs00907z010jfdypbj) 
+##### App apk [click here]() to download
+
 ## Installation
 
 ## Contributions
