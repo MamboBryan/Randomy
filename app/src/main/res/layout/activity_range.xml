@@ -35,20 +35,4 @@
         app:layout_constraintStart_toStartOf="@+id/textView_from_range"
         app:layout_constraintTop_toBottomOf="@+id/textView_from_range" />
 
-    <com.marcinmoskala.arcseekbar.ArcSeekBar
-        android:id="@+id/seekArc_minimum"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView_random_number_minimum"
-        app:layout_constraintTop_toBottomOf="@+id/textView_random_number_minimum"
-        app:progress="100"
-        app:progressBackgroundColor="@color/sliderBack"
-        app:progressBackgroundWidth="20dp"
-        app:progressWidth="20dp"
-        app:roundEdges="true" />
-
 </android.support.constraint.ConstraintLayout>
