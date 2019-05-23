@@ -9,4 +9,12 @@
 
     <color name="app_gradient_start">#12D4FA</color>
     <color name="app_gradient_end">#1EA5FF</color>
+
+    <color name="sliderBack">#4227395a</color>
+    <array name="progressGradientColors">
+        <item>#b5fff6</item>
+        <item>#00ffdf</item>
+        <item>#00bfa4</item>
+        <item>#007c6a</item>
+    </array>
 </resources>
