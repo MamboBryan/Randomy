@@ -7,4 +7,5 @@
     <string name="range_info_text">Set your number\'s range :</string>
     <string name="from_text">From</string>
     <string name="to_text">To</string>
+    <string name="generate_button_text">generate</string>
 </resources>
