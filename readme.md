@@ -17,10 +17,12 @@ You will need the following to run this project:
 * Open the project folder using Android Studio IDE
 * Wait to for build to finish and you're good to go
 
+## Usage
 #### Start activity
 On app start the user will be presented with a detailed information about the app and a button to continue
-Here is a screenshot : 
-![Start Activity](screenshoots/LandingActivity.png)
+Here is a screenshot :
+
+![Start Activity](https://github.com/MamboBryan/Randomy/tree/develop/screenshoots/LandingActivity.png)
 
 #### Setting number preferences
 
@@ -32,6 +34,7 @@ Find any typos? Have another resource you think should be included? Contribution
 * Next, clone this repository to your desktop/laptop to make changes
 
 ` $ git clone {YOUR_REPOSITORY_CLONE_URL}`
+
 ` $ cd ud777-writing-readmes`
 
 * Once you've pushed changes to your local repository, you can issue a pull request by clicking on the green pull request icon.
@@ -39,7 +42,7 @@ Find any typos? Have another resource you think should be included? Contribution
 ## License
 The MIT License (MIT)
 
-Copyright (c) [2019] [Brian Odhiambo]
+Copyright (c) [2019] [Brian Odhiambo](https://github.com/MamboBryan)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
