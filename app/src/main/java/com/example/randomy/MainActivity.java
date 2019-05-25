@@ -3,35 +3,30 @@ package com.example.randomy;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private int minimumRangeValue;
+    private int maximumRangeValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //find start button and set it to the button variable
-        Button startButton = findViewById(R.id.button_start);
+        Intent myIntent = getIntent();
+        minimumRangeValue = Integer.parseInt(myIntent.getStringExtra("minimumRangeValue"));
+        maximumRangeValue = Integer.parseInt(myIntent.getStringExtra("maximumRangeValue"));
 
-        //Set onClick listener for the button to open new activity
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRangeActivity();
-            }
-        });
-
-
+        setRangeValues(minimumRangeValue, maximumRangeValue);
     }
 
-    /*
-        Method to open rangeActivity
-     */
-    private void openRangeActivity() {
-        Intent myIntent = new Intent(this, RangeActivity.class);
-        startActivity(myIntent);
+    public void setRangeValues(int minimumValue, int maximumValue) {
+        TextView minimumDisplay = findViewById(R.id.textView_display_range_minimum);
+        TextView maximumDisplay = findViewById(R.id.textView_display_range_maximum);
+
+        minimumDisplay.setText(String.valueOf(minimumValue));
+        maximumDisplay.setText(String.valueOf(maximumValue));
     }
 }

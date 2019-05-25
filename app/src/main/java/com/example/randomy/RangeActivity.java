@@ -1,7 +1,10 @@
 package com.example.randomy;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.florent37.androidslidr.Slidr;
@@ -38,7 +41,7 @@ public class RangeActivity extends AppCompatActivity {
         maximumTextViewValue = findViewById(R.id.textView_random_number_maximum);
         //Set minimum and maximum values for the maximum SeekBar
         maximumSeekBarSlidr.setMin(minimumRangeValue);
-        maximumSeekBarSlidr.setMin(maximumRangeValue);
+        maximumSeekBarSlidr.setMax(maximumRangeValue);
         //Note SeekBar change and set it to the TextView
         maximumSeekBarSlidr.setCurrentValue(100);
         maximumTextViewValue.setText(String.valueOf(
@@ -46,6 +49,22 @@ public class RangeActivity extends AppCompatActivity {
 
         setProgressChangeListener(minimumSeekBarSlidr, minimumTextViewValue);
         setProgressChangeListener(maximumSeekBarSlidr, maximumTextViewValue);
+
+        /*
+        * This finds the button and assigns it to a variable
+        * Sets an onClick listener to open an intent to the MainActivity
+        * Also puts two extras of Minimum and Maximum number range
+         */
+        Button generateButton = findViewById(R.id.button_generate_random_number);
+        generateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(RangeActivity.this, MainActivity.class);
+                myIntent.putExtra("minimumRangeValue", minimumTextViewValue.getText().toString());
+                myIntent.putExtra("maximumRangeValue", maximumTextViewValue.getText().toString());
+                startActivity(myIntent);
+            }
+        });
 
     }
 
