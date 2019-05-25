@@ -19,14 +19,6 @@ public class MainActivity extends AppCompatActivity {
         minimumRangeValue = Integer.parseInt(myIntent.getStringExtra("minimumRangeValue"));
         maximumRangeValue = Integer.parseInt(myIntent.getStringExtra("maximumRangeValue"));
 
-        setRangeValues(minimumRangeValue, maximumRangeValue);
     }
 
-    public void setRangeValues(int minimumValue, int maximumValue) {
-        TextView minimumDisplay = findViewById(R.id.textView_display_range_minimum);
-        TextView maximumDisplay = findViewById(R.id.textView_display_range_maximum);
-
-        minimumDisplay.setText(String.valueOf(minimumValue));
-        maximumDisplay.setText(String.valueOf(maximumValue));
-    }
 }
