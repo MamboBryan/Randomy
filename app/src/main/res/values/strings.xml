@@ -8,4 +8,9 @@
     <string name="from_text">From</string>
     <string name="to_text">To</string>
     <string name="generate_button_text">generate</string>
+    <string name="regenerate_button_text">regenerate</string>
+    <string name="back_button_text">back</string>
+    <string name="random_number_display_info_text">
+        Your random number is
+    </string>
 </resources>
