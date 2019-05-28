@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e3f2fd"
     tools:context=".MainActivity">
 
     <TextView
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,30 +15,27 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:text="@string/random_number_display_info_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textSize="60sp"
         android:id="@+id/textView_random_number_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
-        tools:text="69"
+        android:textSize="90sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:text="69" />
 
     <LinearLayout
         android:id="@+id/buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttons_layout_bg"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,17 +43,18 @@
 
         <Button
             android:id="@+id/button_regenerate"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:background="@drawable/buttons_bg"
             android:text="@string/regenerate_button_text"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/button_back"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_gravity="center"

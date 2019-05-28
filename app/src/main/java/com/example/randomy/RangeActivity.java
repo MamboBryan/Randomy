@@ -45,7 +45,7 @@ public class RangeActivity extends AppCompatActivity {
         //Note SeekBar change and set it to the TextView
         maximumSeekBarSlidr.setCurrentValue(100);
         maximumTextViewValue.setText(String.valueOf(
-                Math.round(minimumSeekBarSlidr.getCurrentValue())));
+                Math.round(maximumSeekBarSlidr.getCurrentValue())));
 
         setProgressChangeListener(minimumSeekBarSlidr, minimumTextViewValue);
         setProgressChangeListener(maximumSeekBarSlidr, maximumTextViewValue);
