@@ -26,4 +26,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.github.florent37:android-slidr:1.0.3'
+    implementation "com.hanks:htextview-base:0.1.6"
+    implementation "com.hanks:htextview-scale:0.1.6"
+    implementation 'io.saeid:fab-loading:1.0.0'
+    implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
 }

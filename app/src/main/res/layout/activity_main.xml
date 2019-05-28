@@ -7,6 +7,24 @@
     android:background="#e3f2fd"
     tools:context=".MainActivity">
 
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleY="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mwhCloseColor="@color/primaryColor"
+        app:mwhColorAlpha="0.60"
+        app:mwhGradientAngle="90"
+        app:mwhProgress="1"
+        app:mwhStartColor="@color/primaryDarkColor"
+        app:mwhVelocity="2"
+        app:mwhWaveHeight="50dp"
+        app:mwhWaves="MultiWave" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -21,21 +39,33 @@
 
     <TextView
         android:id="@+id/textView_random_number_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
         android:layout_marginTop="32dp"
-        android:textSize="90sp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="96sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:text="69" />
+
+    <com.hanks.htextview.scale.ScaleTextView
+        android:id="@+id/randomScale"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:textSize="96sp"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:text="90" />
 
     <LinearLayout
         android:id="@+id/buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/buttons_layout_bg"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +75,7 @@
             android:id="@+id/button_regenerate"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:text="@string/regenerate_button_text"
@@ -58,8 +88,9 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:text="@string/back_button_text"
             android:textAllCaps="false" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
