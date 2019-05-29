@@ -14,6 +14,9 @@ import com.hanks.htextview.scale.ScaleTextView;
 import com.scwang.wave.MultiWaveHeader;
 
 import java.util.Random;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 import io.saeid.fabloading.LoadingView;
 
@@ -29,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AppCenter.start(getApplication(), "8df8b2cc-1b91-442d-888c-beae3706ce58",
+                Analytics.class, Crashes.class);
+
         randomNumberDisplay = findViewById(R.id.textView_random_number_display);
         scaleRandomText = findViewById(R.id.randomScale);
-
-//        MultiWaveHeader waveHeader = findViewById(R.id.waveHeader);
 
         Intent myIntent = getIntent();
         minimumRangeValue = Integer.parseInt(myIntent.getStringExtra("minimumRangeValue"));
@@ -40,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
         scaleRandomText.setVisibility(View.INVISIBLE);
         displayRandomNumber();
-
-
 
         Button regenerateButton = findViewById(R.id.button_regenerate);
         regenerateButton.setOnClickListener(new View.OnClickListener() {
@@ -57,11 +59,8 @@ public class MainActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent myIntent = new Intent(MainActivity.this, RangeActivity.class);
                 startActivity(myIntent);
-
-
             }
         });
 

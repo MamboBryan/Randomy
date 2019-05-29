@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.florent37.androidslidr.Slidr;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 public class RangeActivity extends AppCompatActivity {
 
@@ -25,24 +28,29 @@ public class RangeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_range);
 
+        AppCenter.start(getApplication(), "8df8b2cc-1b91-442d-888c-beae3706ce58",
+                Analytics.class, Crashes.class);
+
         //get minimum SeekBar and TexView views and assign to variable
+        //Set minimum and maximum values for the minimum SeekBar
+        //Note SeekBar change and set it to the TextView
         minimumSeekBarSlidr = findViewById(R.id.seekbar_minimum_value);
         minimumTextViewValue = findViewById(R.id.textView_random_number_minimum);
-        //Set minimum and maximum values for the minimum SeekBar
         minimumSeekBarSlidr.setMin(minimumRangeValue);
         minimumSeekBarSlidr.setMax(maximumRangeValue);
-        //Note SeekBar change and set it to the TextView
         minimumSeekBarSlidr.setCurrentValue(50);
         minimumTextViewValue.setText(String.valueOf(
                 Math.round(minimumSeekBarSlidr.getCurrentValue())));
 
-        //get maximum SeekBar and TexView views and assign to variable
+        /*
+         * Get maximum SeekBar and TexView views and assign to variable
+         * Set minimum and maximum values for the maximum SeekBar
+         * Note SeekBar change and set it to the TextView
+         */
         maximumSeekBarSlidr = findViewById(R.id.seekbar_maximum_value);
         maximumTextViewValue = findViewById(R.id.textView_random_number_maximum);
-        //Set minimum and maximum values for the maximum SeekBar
         maximumSeekBarSlidr.setMin(minimumRangeValue);
         maximumSeekBarSlidr.setMax(maximumRangeValue);
-        //Note SeekBar change and set it to the TextView
         maximumSeekBarSlidr.setCurrentValue(100);
         maximumTextViewValue.setText(String.valueOf(
                 Math.round(maximumSeekBarSlidr.getCurrentValue())));
@@ -51,9 +59,9 @@ public class RangeActivity extends AppCompatActivity {
         setProgressChangeListener(maximumSeekBarSlidr, maximumTextViewValue);
 
         /*
-        * This finds the button and assigns it to a variable
-        * Sets an onClick listener to open an intent to the MainActivity
-        * Also puts two extras of Minimum and Maximum number range
+         * This finds the button and assigns it to a variable
+         * Sets an onClick listener to open an intent to the MainActivity
+         * Also puts two extras of Minimum and Maximum number range
          */
         Button generateButton = findViewById(R.id.button_generate_random_number);
         generateButton.setOnClickListener(new View.OnClickListener() {
@@ -69,8 +77,8 @@ public class RangeActivity extends AppCompatActivity {
     }
 
     /*
-    * This method takes the slidr and textview as parameters
-    * It then notes the change of the slidr and updates the textView with the progress value
+     * This method takes the slidr and TextView as parameters
+     * It then notes the change of the slidr and updates the textView with the progress value
      */
     private void setProgressChangeListener(Slidr seekBarSlidr, final TextView textView) {
         seekBarSlidr.setListener(new Slidr.Listener() {

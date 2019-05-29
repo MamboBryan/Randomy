@@ -23,7 +23,7 @@ On app start the user will be presented with a detailed information about the ap
 
 Here is a screenshot :
 
-![Start Activity](screenshoots/LandingActivity.png)
+![Start Activity](screenshoots/landing.PNG)
 
 #### Setting number preferences
 
