@@ -3,14 +3,13 @@ package com.example.randomy;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.florent37.androidslidr.Slidr;
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.analytics.Analytics;
-import com.microsoft.appcenter.crashes.Crashes;
 
 public class RangeActivity extends AppCompatActivity {
 
@@ -27,9 +26,6 @@ public class RangeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_range);
-
-        AppCenter.start(getApplication(), "8df8b2cc-1b91-442d-888c-beae3706ce58",
-                Analytics.class, Crashes.class);
 
         //get minimum SeekBar and TexView views and assign to variable
         //Set minimum and maximum values for the minimum SeekBar
@@ -70,10 +66,35 @@ public class RangeActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(RangeActivity.this, MainActivity.class);
                 myIntent.putExtra("minimumRangeValue", minimumTextViewValue.getText().toString());
                 myIntent.putExtra("maximumRangeValue", maximumTextViewValue.getText().toString());
-                startActivity(myIntent);
+
+                if (numbersAreNotEqual(minimumTextViewValue, maximumTextViewValue)) {
+
+                    startActivity(myIntent);
+
+                } else {
+                    Toast toast = Toast.makeText(RangeActivity.this,
+                            "Numbers cannot be equal", Toast.LENGTH_SHORT);
+                    toast.setGravity(
+                            Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
+
+
             }
         });
 
+    }
+
+    private boolean numbersAreNotEqual(TextView minimumText, TextView maximumText) {
+
+        int minimum = Integer.parseInt(minimumText.getText().toString());
+        int maximum = Integer.parseInt(maximumText.getText().toString());
+
+        if (minimum >= maximum) {
+            return false;
+        }
+
+        return true;
     }
 
     /*

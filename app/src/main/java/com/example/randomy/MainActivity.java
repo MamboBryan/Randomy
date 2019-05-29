@@ -9,16 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hanks.htextview.scale.ScaleText;
 import com.hanks.htextview.scale.ScaleTextView;
-import com.scwang.wave.MultiWaveHeader;
 
 import java.util.Random;
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.analytics.Analytics;
-import com.microsoft.appcenter.crashes.Crashes;
 
-import io.saeid.fabloading.LoadingView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        AppCenter.start(getApplication(), "8df8b2cc-1b91-442d-888c-beae3706ce58",
-                Analytics.class, Crashes.class);
 
         randomNumberDisplay = findViewById(R.id.textView_random_number_display);
         scaleRandomText = findViewById(R.id.randomScale);
