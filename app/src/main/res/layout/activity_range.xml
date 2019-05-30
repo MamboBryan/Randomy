@@ -49,8 +49,8 @@
         app:layout_constraintStart_toStartOf="@+id/textView_random_number_minimum"
         app:layout_constraintTop_toBottomOf="@+id/textView_random_number_minimum"
         app:slidr_draw_bubble="false"
-        app:slidr_region_leftColor="@color/button_gradient_end"
-        app:slidr_region_rightColor="@color/button_gradient_start"
+        app:slidr_region_leftColor="@color/primaryColor"
+        app:slidr_region_rightColor="@color/primaryLightColor"
         app:slidr_regions="true"
         app:slidr_regions_centerText="true"
         app:slidr_regions_textFollowRegionColor="true" />
@@ -87,8 +87,8 @@
         app:layout_constraintStart_toStartOf="@+id/textView_random_number_maximum"
         app:layout_constraintTop_toBottomOf="@+id/textView_random_number_maximum"
         app:slidr_draw_bubble="false"
-        app:slidr_region_leftColor="@color/button_gradient_end"
-        app:slidr_region_rightColor="@color/button_gradient_start"
+        app:slidr_region_leftColor="@color/primaryColor"
+        app:slidr_region_rightColor="@color/primaryLightColor"
         app:slidr_regions="true"
         app:slidr_regions_centerText="true"
         app:slidr_regions_textFollowRegionColor="true" />

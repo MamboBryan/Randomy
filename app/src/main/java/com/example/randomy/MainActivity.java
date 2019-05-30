@@ -9,13 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hanks.htextview.scale.ScaleText;
 import com.hanks.htextview.scale.ScaleTextView;
-import com.scwang.wave.MultiWaveHeader;
 
 import java.util.Random;
 
-import io.saeid.fabloading.LoadingView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,16 +29,12 @@ public class MainActivity extends AppCompatActivity {
         randomNumberDisplay = findViewById(R.id.textView_random_number_display);
         scaleRandomText = findViewById(R.id.randomScale);
 
-//        MultiWaveHeader waveHeader = findViewById(R.id.waveHeader);
-
         Intent myIntent = getIntent();
         minimumRangeValue = Integer.parseInt(myIntent.getStringExtra("minimumRangeValue"));
         maximumRangeValue = Integer.parseInt(myIntent.getStringExtra("maximumRangeValue"));
 
         scaleRandomText.setVisibility(View.INVISIBLE);
         displayRandomNumber();
-
-
 
         Button regenerateButton = findViewById(R.id.button_regenerate);
         regenerateButton.setOnClickListener(new View.OnClickListener() {
@@ -57,11 +50,10 @@ public class MainActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent myIntent = new Intent(MainActivity.this, RangeActivity.class);
                 startActivity(myIntent);
-
-
+                MainActivity.this.overridePendingTransition(
+                        R.anim.animation_main_enter, R.anim.animation_main_leave);
             }
         });
 
