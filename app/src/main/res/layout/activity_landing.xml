@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_activity_background"
     tools:context=".LandingActivity">
 
 
@@ -31,21 +30,23 @@
         android:layout_marginBottom="32dp"
         android:text="@string/app_info"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
+        app:fontFamily="@font/poppins"
         app:layout_constraintBottom_toTopOf="@+id/button_start"
         app:layout_constraintEnd_toEndOf="@+id/button_start"
         app:layout_constraintStart_toStartOf="@+id/button_start" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textColor="@android:color/white"
-        android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+    <!--<TextView-->
+        <!--android:id="@+id/textView2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/app_name"-->
+        <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="48sp"-->
+        <!--app:fontFamily="@font/poppins"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/textView3"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/textView3" />-->
 
     <TextView
         android:id="@+id/textView3"
@@ -56,7 +57,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/welcome_message"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         app:fontFamily="@font/poppins"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

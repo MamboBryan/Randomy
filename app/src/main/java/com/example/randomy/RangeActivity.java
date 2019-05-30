@@ -17,7 +17,7 @@ public class RangeActivity extends AppCompatActivity {
     private TextView minimumTextViewValue;
 
     int minimumRangeValue = 0;
-    int maximumRangeValue = 100;
+    int maximumRangeValue = 1000;
 
     private Slidr maximumSeekBarSlidr;
     private TextView maximumTextViewValue;
@@ -27,14 +27,14 @@ public class RangeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_range);
 
-        //get minimum SeekBar and TexView views and assign to variable
-        //Set minimum and maximum values for the minimum SeekBar
-        //Note SeekBar change and set it to the TextView
+        /*
+         * Get minimum SeekBar and TexView views and assign to variable
+         * Set minimum and maximum values for the minimum SeekBar
+         * Note SeekBar change and set it to the TextView
+         */
         minimumSeekBarSlidr = findViewById(R.id.seekbar_minimum_value);
         minimumTextViewValue = findViewById(R.id.textView_random_number_minimum);
-        minimumSeekBarSlidr.setMin(minimumRangeValue);
-        minimumSeekBarSlidr.setMax(maximumRangeValue);
-        minimumSeekBarSlidr.setCurrentValue(50);
+        setSlidrValues(minimumSeekBarSlidr, 100);
         minimumTextViewValue.setText(String.valueOf(
                 Math.round(minimumSeekBarSlidr.getCurrentValue())));
 
@@ -45,9 +45,7 @@ public class RangeActivity extends AppCompatActivity {
          */
         maximumSeekBarSlidr = findViewById(R.id.seekbar_maximum_value);
         maximumTextViewValue = findViewById(R.id.textView_random_number_maximum);
-        maximumSeekBarSlidr.setMin(minimumRangeValue);
-        maximumSeekBarSlidr.setMax(maximumRangeValue);
-        maximumSeekBarSlidr.setCurrentValue(100);
+        setSlidrValues(maximumSeekBarSlidr, 500);
         maximumTextViewValue.setText(String.valueOf(
                 Math.round(maximumSeekBarSlidr.getCurrentValue())));
 
@@ -68,23 +66,47 @@ public class RangeActivity extends AppCompatActivity {
                 myIntent.putExtra("maximumRangeValue", maximumTextViewValue.getText().toString());
 
                 if (numbersAreNotEqual(minimumTextViewValue, maximumTextViewValue)) {
-
                     startActivity(myIntent);
+                    RangeActivity.this.overridePendingTransition(
+                            R.anim.animation_range_enter, R.anim.animation_range_leave);
 
                 } else {
                     Toast toast = Toast.makeText(RangeActivity.this,
-                            "Numbers cannot be equal", Toast.LENGTH_SHORT);
+                            "Set correct range", Toast.LENGTH_SHORT);
                     toast.setGravity(
                             Gravity.CENTER, 0, 0);
                     toast.show();
                 }
-
 
             }
         });
 
     }
 
+    /*
+     * This method takes the slidr and an integer as params
+     * It then sets the maximum and minimum value of the slidr and also its current value
+     */
+    private void setSlidrValues(Slidr seekBarSlidr, int currentValue) {
+        seekBarSlidr.setMin(minimumRangeValue);
+        seekBarSlidr.setMax(maximumRangeValue);
+        seekBarSlidr.setCurrentValue(currentValue);
+        seekBarSlidr.setRegionTextFormatter(new Slidr.RegionTextFormatter() {
+            @Override
+            public String format(int region, float value) {
+                return String.format(" ", region, (int) value);
+            }
+        });
+        seekBarSlidr.addStep(new
+                Slidr.Step("", 1500, R.color.primaryColor,
+                R.color.primaryDarkColor));
+
+    }
+
+    /*
+     * This method takes the two textView as parameters
+     * It then checks if the two textViews are equal or the minimum is greater than maximum
+     */
     private boolean numbersAreNotEqual(TextView minimumText, TextView maximumText) {
 
         int minimum = Integer.parseInt(minimumText.getText().toString());

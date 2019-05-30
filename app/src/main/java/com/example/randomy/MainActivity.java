@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent myIntent = new Intent(MainActivity.this, RangeActivity.class);
                 startActivity(myIntent);
+                MainActivity.this.overridePendingTransition(
+                        R.anim.animation_main_enter, R.anim.animation_main_leave);
             }
         });
 
