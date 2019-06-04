@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RangeActivity">
+
+    <TextView
+        android:id="@+id/textview_range_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/range_info_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_from_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/from_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="@+id/textview_range_info"
+        app:layout_constraintTop_toBottomOf="@+id/textview_range_info" />
+
+    <TextView
+        android:id="@+id/textView_random_number_minimum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="@+id/textView_from_range"
+        app:layout_constraintTop_toBottomOf="@+id/textView_from_range"
+        tools:text="0" />
+
+    <com.github.florent37.androidslidr.Slidr
+        android:id="@+id/seekbar_minimum_value"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_random_number_minimum"
+        app:layout_constraintTop_toBottomOf="@+id/textView_random_number_minimum"
+        app:slidr_draw_bubble="false"
+        app:slidr_region_leftColor="@color/primaryColor"
+        app:slidr_region_rightColor="@color/primaryLightColor"
+        app:slidr_regions="true"
+        app:slidr_regions_centerText="true"
+        app:slidr_regions_textFollowRegionColor="true" />
+
+    <TextView
+        android:id="@+id/textView_to_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/to_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintStart_toStartOf="@+id/seekbar_minimum_value"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_minimum_value" />
+
+    <TextView
+        android:id="@+id/textView_random_number_maximum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="@+id/textView_to_range"
+        app:layout_constraintTop_toBottomOf="@+id/textView_to_range"
+        tools:text="0" />
+
+    <com.github.florent37.androidslidr.Slidr
+        android:id="@+id/seekbar_maximum_value"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_random_number_maximum"
+        app:layout_constraintTop_toBottomOf="@+id/textView_random_number_maximum"
+        app:slidr_draw_bubble="false"
+        app:slidr_region_leftColor="@color/primaryColor"
+        app:slidr_region_rightColor="@color/primaryLightColor"
+        app:slidr_regions="true"
+        app:slidr_regions_centerText="true"
+        app:slidr_regions_textFollowRegionColor="true" />
+
+    <Button
+        android:id="@+id/button_generate_random_number"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/buttons_bg"
+        android:text="@string/generate_button_text"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

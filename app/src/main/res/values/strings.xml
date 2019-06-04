@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Randomy</string>
+    <string name="welcome_message">Welcome to :</string>
+    <string name="app_info">The best random number generator</string>
+    <string name="start_button_text">Start</string>
+    <string name="logo_content_description">This is the app logo</string>
+    <string name="range_info_text">Set your number\'s range :</string>
+    <string name="from_text">From</string>
+    <string name="to_text">To</string>
+    <string name="generate_button_text">generate</string>
+    <string name="regenerate_button_text">regenerate</string>
+    <string name="back_button_text">back</string>
+    <string name="random_number_display_info_text">
+        Your random number is
+    </string>
+</resources>

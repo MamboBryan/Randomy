@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#fbab7e</color>
+    <color name="primaryLightColor">#ffddae</color>
+    <color name="primaryDarkColor">#c57b51</color>
+    <color name="secondaryColor">#1ea5ff</color>
+    <color name="secondaryLightColor">#70d6ff</color>
+    <color name="secondaryDarkColor">#0077cb</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#000000</color>
+
+    <color name="button_gradient_start">#FBAB7E</color>
+    <color name="button_gradient_end">#F7CE68</color>
+
+    <color name="app_gradient_start">#12D4FA</color>
+    <color name="app_gradient_end">#1EA5FF</color>
+
+    <color name="sliderBack">#4227395a</color>
+    <array name="progressGradientColors">
+        <item>#b5fff6</item>
+        <item>#00ffdf</item>
+        <item>#00bfa4</item>
+        <item>#007c6a</item>
+    </array>
+</resources>
