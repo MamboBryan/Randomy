@@ -9,45 +9,49 @@
     <TextView
         android:id="@+id/textview_range_info"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:text="@string/range_info_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/textView_from_range"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:text="@string/from_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="@+id/textview_range_info"
-        app:layout_constraintTop_toBottomOf="@+id/textview_range_info" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_range_info"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/textView_random_number_minimum"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:textSize="60sp"
         app:layout_constraintStart_toStartOf="@+id/textView_from_range"
         app:layout_constraintTop_toBottomOf="@+id/textView_from_range"
+        app:layout_constraintVertical_weight="1"
         tools:text="0" />
 
     <com.github.florent37.androidslidr.Slidr
         android:id="@+id/seekbar_minimum_value"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView_random_number_minimum"
         app:layout_constraintTop_toBottomOf="@+id/textView_random_number_minimum"
+        app:layout_constraintVertical_weight="1"
         app:slidr_draw_bubble="false"
         app:slidr_region_leftColor="@color/primaryColor"
         app:slidr_region_rightColor="@color/primaryLightColor"
@@ -58,27 +62,29 @@
     <TextView
         android:id="@+id/textView_to_range"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:text="@string/to_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintStart_toStartOf="@+id/seekbar_minimum_value"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar_minimum_value" />
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_minimum_value"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/textView_random_number_maximum"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:textSize="60sp"
         app:layout_constraintStart_toStartOf="@+id/textView_to_range"
         app:layout_constraintTop_toBottomOf="@+id/textView_to_range"
+        app:layout_constraintVertical_weight="1"
         tools:text="0" />
 
     <com.github.florent37.androidslidr.Slidr
         android:id="@+id/seekbar_maximum_value"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_margin="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -86,6 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView_random_number_maximum"
         app:layout_constraintTop_toBottomOf="@+id/textView_random_number_maximum"
+        app:layout_constraintVertical_weight="1"
         app:slidr_draw_bubble="false"
         app:slidr_region_leftColor="@color/primaryColor"
         app:slidr_region_rightColor="@color/primaryLightColor"
@@ -97,13 +104,18 @@
         android:id="@+id/button_generate_random_number"
         android:layout_width="150dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/buttons_bg"
         android:text="@string/generate_button_text"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_maximum_value"
+        app:layout_constraintVertical_weight="1" />
 
 </android.support.constraint.ConstraintLayout>
